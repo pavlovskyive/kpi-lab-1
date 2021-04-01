@@ -1,14 +1,3 @@
-go_binary {
-  // Module (and output) name.
-  name: "bood",
-
-  // Go package to build.
-  pkg: "github.com/pavlovskyive/kpi-lab-1/build/cmd/bood",
-
-  // Build inputs.
-  srcs: ["**/*.go", "../go.mod"]
-}
-
 go_tested_binary {
   // Module (and output) name.
   name: "bood",
