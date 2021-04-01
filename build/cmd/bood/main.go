@@ -22,6 +22,7 @@ func NewContext() *blueprint.Context {
 	// TODO: Замініть імплементацію go_binary на власну.
 	ctx.RegisterModuleType("go_binary", gomodule.SimpleBinFactory)
 	ctx.RegisterModuleType("go_tested_binary", gomodule.SimpleTestBinFactory)
+	ctx.RegisterModuleType("go_test_coverage", gomodule.SimpleTestCoverageFactory)
 	return ctx
 }
 

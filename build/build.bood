@@ -20,4 +20,12 @@ go_tested_binary {
   // Build inputs.
   srcs:  ["**/*.go", "../go.mod"],
   testSrcs: ["**/*_test.go"]
- }
+}
+
+go_test_coverage {
+  name: “bood-coverage”, 
+  pkg: “github.com/pavlovskyive/kpi-lab-1/build/cmd/bood”,
+  testPkg: "./...",
+  srcs: [“**/*.go”],
+  testSrcs: ["**/*_test.go"],
+}
