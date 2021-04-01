@@ -21,7 +21,7 @@ type testCoveragedModule struct {
 
 var (
 	goTestCoverage = pctx.StaticRule("testCoverage", blueprint.RuleParams{
-		Command:     "cd $workDir && go test $pkg > $testFile -coverprofile=coverage.out && go tool cover -html=coverage.out -o $htmlFile",
+		Command:     "cd $workDir && go test $pkg -coverprofile=coverage.out && go tool cover -html=coverage.out -o $htmlFile && rm coverage.out",
 		Description: "test go package $pkg",
 	}, "workDir", "pkg", "htmlFile")
 )

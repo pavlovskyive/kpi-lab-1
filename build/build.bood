@@ -23,9 +23,9 @@ go_tested_binary {
 }
 
 go_test_coverage {
-  name: “bood-coverage”, 
-  pkg: “github.com/pavlovskyive/kpi-lab-1/build/cmd/bood”,
+  name: "bood-coverage", 
+  pkg: "github.com/pavlovskyive/kpi-lab-1/build/cmd/bood",
   testPkg: "./...",
-  srcs: [“**/*.go”],
+  srcs: ["**/*.go"],
   testSrcs: ["**/*_test.go"],
 }
