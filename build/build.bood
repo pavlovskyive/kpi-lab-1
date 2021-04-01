@@ -3,8 +3,21 @@ go_binary {
   name: "bood",
 
   // Go package to build.
-  pkg: "github.com/roman-mazur/design-practice-1-template/build/cmd/bood",
+  pkg: "github.com/pavlovskyive/kpi-lab-1/build/cmd/bood",
 
   // Build inputs.
   srcs: ["**/*.go", "../go.mod"]
 }
+
+go_tested_binary {
+  // Module (and output) name.
+  name: "bood",
+
+  // Go package to build.
+  pkg: "github.com/pavlovskyive/kpi-lab-1/build/cmd/bood",
+  testPkg: "./...",
+  
+  // Build inputs.
+  srcs:  ["**/*.go", "../go.mod"],
+  testSrcs: ["**/*_test.go"]
+ }
