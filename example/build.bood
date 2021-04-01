@@ -1,0 +1,14 @@
+go_tested_binary {
+  name: "example",
+  pkg: ".",
+  testPkg: "./...",
+  srcs:  ["**/*.go"],
+  testSrcs: ["**/*_test.go"]
+}
+go_test_coverage {
+  name: "example-coverage", 
+  pkg: ".",
+  testPkg: "./...",
+  srcs: ["**/*.go"],
+  testSrcs: ["**/*_test.go"],
+}
