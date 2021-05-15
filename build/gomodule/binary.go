@@ -41,6 +41,9 @@ type goBinaryModuleType struct {
 
 		// Example of how to specify dependencies.
 		Deps []string
+
+		// Skip module.
+		Optional bool
 	}
 }
 
@@ -90,6 +93,7 @@ func (gb *goBinaryModuleType) GenerateBuildActions(ctx blueprint.ModuleContext) 
 		Rule:        goBuild,
 		Outputs:     []string{outputPath},
 		Implicits:   inputs,
+		Optional:    gb.properties.Optional,
 		Args: map[string]string{
 			"outputPath": outputPath,
 			"workDir":    ctx.ModuleDir(),

@@ -18,6 +18,7 @@ type testedBinaryModule struct {
 		TestSrcs    []string
 		VendorFirst bool
 		Deps        []string
+		Optional    bool
 	}
 }
 
@@ -88,6 +89,7 @@ func (tb *testedBinaryModule) GenerateBuildActions(ctx blueprint.ModuleContext) 
 		Rule:        goBuild,
 		Outputs:     []string{outputPath},
 		Implicits:   buildInputs,
+		Optional:    tb.properties.Optional,
 		Args: map[string]string{
 			"outputPath": outputPath,
 			"workDir":    ctx.ModuleDir(),
@@ -100,6 +102,7 @@ func (tb *testedBinaryModule) GenerateBuildActions(ctx blueprint.ModuleContext) 
 		Rule:        goTest,
 		Outputs:     []string{testsPath},
 		Implicits:   testInputs,
+		Optional:    tb.properties.Optional,
 		Args: map[string]string{
 			"workDir":  ctx.ModuleDir(),
 			"pkg":      tb.properties.TestPkg,

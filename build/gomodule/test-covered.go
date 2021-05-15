@@ -16,6 +16,7 @@ type testCoveragedModule struct {
 		TestPkg  string
 		Srcs     []string
 		TestSrcs []string
+		Optional bool
 	}
 }
 
